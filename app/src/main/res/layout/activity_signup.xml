@@ -39,7 +39,7 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -47,7 +47,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/password_chk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -55,10 +55,27 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="이름"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/birth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="생년월일"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/phone_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="연락처"
             android:inputType="phone" />
 
         <LinearLayout

@@ -20,6 +20,9 @@
         <activity android:name=".SignupActivity"
             android:label="SignupActivity">
         </activity>
+        <activity android:name=".WriteActivity"
+            android:label="WriteActivity">
+        </activity>
     </application>
 
 </manifest>

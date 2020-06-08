@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("msg");
-        myRef.setValue("Hello, World!1223");
+        DatabaseReference myRef = database.getReference("msg12");
+        myRef.setValue("Hello, World!333");
         text = (EditText) findViewById(R.id.idText);
 
     }

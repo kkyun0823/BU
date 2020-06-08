@@ -36,6 +36,7 @@ public class SignupActivity extends AppCompatActivity {
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "취소되었습니다.", Toast.LENGTH_LONG).show();
                 setResult(RESULT_CANCELED);
                 finish();
             }

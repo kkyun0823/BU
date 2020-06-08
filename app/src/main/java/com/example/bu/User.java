@@ -6,6 +6,7 @@ public class User {
     private String phoneNum;
     private String name;
     private String birth;
+    private int state;
 
     public User(){}
     public User(String id, String password, String phoneNum, String name, String birth){
@@ -35,6 +36,10 @@ public class User {
     public String getPhoneNum() {
         return phoneNum;
     }
+
+    public int getState(){return state;}
+
+    public void setState(int state){this.state =  state;}
 
     public void setBirth(String birth) {
         this.birth = birth;

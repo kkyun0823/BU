@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -15,8 +16,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
-    EditText id;
-    User user;
+    private EditText id;
+    private User user;
+    private int state;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +44,16 @@ public class SignupActivity extends AppCompatActivity {
                 user.setName(text_na.getText().toString());
                 EditText text_bd = (EditText)findViewById(R.id.birth);
                 user.setBirth(text_bd.getText().toString());
+                state = onCheckBoxClicked(findViewById(R.id.checkBox));
+                user.setState(state);
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("/user");
-                myRef.setValue(user);
+                if(state == 0) {
+                    DatabaseReference myRef = database.getReference("/user/" + text_id.getText().toString());
+                    myRef.setValue(user);
+                }else if(state == 1){
+                    DatabaseReference myRef = database.getReference("/wait/" + text_id.getText().toString());
+                    myRef.setValue(user);
+                }
                 Toast.makeText(getApplicationContext(),"회원가입 완료되었습니다.", Toast.LENGTH_LONG).show();
                 setResult(RESULT_OK);
                 finish();
@@ -62,6 +72,11 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
+    public int onCheckBoxClicked(View view){
+        boolean checked = ((CheckBox)view).isChecked();
+        if(checked) return 1;
+        else return 0;
+    }
 
 
 

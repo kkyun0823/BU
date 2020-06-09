@@ -16,6 +16,10 @@ public class User {
         this.name = name;
         this.birth = birth;
     }
+    public User(String id, String password, String phoneNum, String name, String birth, int state){
+        this(id,password,phoneNum,name,birth);
+        this.state=state;
+    }
 
     public String getId() {
         return id;

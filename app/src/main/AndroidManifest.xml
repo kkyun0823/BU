@@ -23,6 +23,10 @@
         <activity android:name=".WriteActivity"
             android:label="WriteActivity">
         </activity>
+        <activity android:name=".CounselorListActivity"
+            android:label="CounselorListActivity">
+        </activity>
+
     </application>
 
 </manifest>

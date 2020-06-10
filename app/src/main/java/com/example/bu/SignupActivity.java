@@ -28,7 +28,6 @@ public class SignupActivity extends AppCompatActivity {
         id = (EditText)findViewById(R.id.idText);
 
 
-
         Button btn_agree = (Button)findViewById(R.id.btn_agree);
         btn_agree.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -86,7 +86,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="이름"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:privateImeOptions="defaultInputmode=korean"/>
 
         <EditText
             android:id="@+id/birth"
@@ -100,6 +101,7 @@
             android:id="@+id/phone_num"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:hint="연락처"
             android:inputType="phone" />

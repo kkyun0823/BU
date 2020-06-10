@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
         }
+        //0 일반유저, 1 대기상태, 2 승인상태, 3 관리자
         if(user != null && user.getState() != 3){
             Toast.makeText(getApplicationContext(),"로그인 성공",Toast.LENGTH_LONG).show();
             Intent intent = new Intent(getApplicationContext(), CounselorListActivity.class);

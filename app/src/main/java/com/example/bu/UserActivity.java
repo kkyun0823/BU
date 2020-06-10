@@ -1,11 +1,13 @@
 package com.example.bu;
 
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.SimpleAdapter;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,20 +18,23 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminActivity extends AppCompatActivity {
-    private List<User> userList = new ArrayList<User>();
+public class UserActivity extends AppCompatActivity {
+    private ArrayList<User> userList = new ArrayList<User>();
+    private MyAdapter adapter;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin);
+        setContentView(R.layout.activity_user);
 
         FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference mRef = mDatabase.getReference("wait");
+        DatabaseReference mRef = mDatabase.getReference("user");
         mRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot data : dataSnapshot.getChildren()){
-                    userList.add(data.getValue(User.class));
+                    if(data.getValue(User.class).getState()==2) {
+                        userList.add(data.getValue(User.class));
+                    }
                 }
             }
 
@@ -38,11 +43,14 @@ public class AdminActivity extends AppCompatActivity {
 
             }
         });
-
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.request_counselor);
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.counselor_list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-
+        adapter = new MyAdapter(userList);
+        recyclerView.setAdapter(adapter);
+        for(User users : userList){
+            users.getName();
+        }
 
     }
 }

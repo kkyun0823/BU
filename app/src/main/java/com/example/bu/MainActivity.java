@@ -92,11 +92,16 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         //0 일반유저, 1 대기상태, 2 승인상태, 3 관리자
-        if(user != null && user.getState() != 3){
+        if(user != null && user.getState() == 0){
             Toast.makeText(getApplicationContext(),"로그인 성공",Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(getApplicationContext(), CounselorListActivity.class);
+            Intent intent = new Intent(getApplicationContext(), UserActivity.class);
             startActivityForResult(intent,1);
-        }else if (user != null && user.getState() == 3){
+        }else if(user != null && user.getState() == 2){
+            Toast.makeText(getApplicationContext(),"상담사 로그인",Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(getApplicationContext(), CounselorActivity.class);
+            startActivityForResult(intent,1);
+        }
+        else if (user != null && user.getState() == 3){
             Toast.makeText(getApplicationContext(),"관리자 로그인",Toast.LENGTH_LONG).show();
             Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
             startActivityForResult(intent,1);

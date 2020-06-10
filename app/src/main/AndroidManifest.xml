@@ -21,16 +21,18 @@
         </activity>
         <activity
             android:name=".SignupActivity"
-            android:label="SignupActivity"></activity>
+            android:label="SignupActivity" />
         <activity
             android:name=".WriteActivity"
-            android:label="WriteActivity"></activity>
+            android:label="WriteActivity" />
         <activity
-            android:name=".CounselorListActivity"
-            android:label="CounselorListActivity"></activity>
+            android:name=".UserActivity"
+            android:label="UserActivity" />
         <activity
             android:name=".AdminActivity"
-            android:label="AdminActivity"></activity>
+            android:label="AdminActivity" />
+        <activity android:name=".CounselorActivity"
+            android:label="CounselorActivity"/>
     </application>
 
 </manifest>

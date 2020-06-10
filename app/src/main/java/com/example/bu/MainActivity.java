@@ -33,19 +33,19 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
         DatabaseReference mRef = mDatabase.getReference("user");
-//        mRef.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                for(DataSnapshot data : dataSnapshot.getChildren()){
-//                    userList.add(data.getValue(User.class));
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
+        mRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot data : dataSnapshot.getChildren()){
+                    userList.add(data.getValue(User.class));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
     }
 
@@ -91,11 +91,17 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
         }
-        if(user != null){
+        if(user != null && user.getState() != 3){
             Toast.makeText(getApplicationContext(),"로그인 성공",Toast.LENGTH_LONG).show();
             Intent intent = new Intent(getApplicationContext(), CounselorListActivity.class);
             startActivityForResult(intent,1);
-        }else{
+        }else if (user != null && user.getState() == 3){
+            Toast.makeText(getApplicationContext(),"관리자 로그인",Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+            startActivityForResult(intent,1);
+
+        }
+        else{
             Toast.makeText(getApplicationContext(),"id와 password를 확인해주세요",Toast.LENGTH_LONG).show();
             password.setText("");
             return;

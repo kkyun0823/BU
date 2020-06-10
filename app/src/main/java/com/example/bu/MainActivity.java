@@ -1,8 +1,10 @@
 package com.example.bu;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -48,8 +50,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickedSignup(View view){
-        Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
-        startActivityForResult(intent, 1);
+        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
+        alertBuilder.setMessage("상담사 가입을 희망하시는 경우 상담사 가입에 체크해주시길 바랍니다. 심사 후 상담사 등록을 도와드립니다.");
+        alertBuilder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                startActivityForResult(intent, 1);
+            }
+        });
+        AlertDialog dialog = alertBuilder.create();
+        dialog.show();
+
+
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){

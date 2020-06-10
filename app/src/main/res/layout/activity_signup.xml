@@ -119,7 +119,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_back"
                 android:fontFamily="@font/blacknorm"
-                android:text="회원가입" />
+                android:text="회원가입"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btn_cancel"
@@ -129,7 +130,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_back"
                 android:fontFamily="@font/blacknorm"
-                android:text="취소" />
+                android:text="취소"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
     </LinearLayout>

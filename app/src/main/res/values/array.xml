@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category">
+        <item>가족상담</item>
+        <item>심리상담</item>
+        <item>진로상담</item>
+        <item>청소년상담</item>
+        <item>교우관계</item>
+        <item>이성관계</item>
+    </string-array>
+</resources>

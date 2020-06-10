@@ -33,23 +33,24 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
         DatabaseReference mRef = mDatabase.getReference("user");
-        mRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot data : dataSnapshot.getChildren()){
-                    userList.add(data.getValue(User.class));
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+//        mRef.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                for(DataSnapshot data : dataSnapshot.getChildren()){
+//                    userList.add(data.getValue(User.class));
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
 
     }
 
     public void clickedSignup(View view){
+        //alert dialog 출력 후 확인 누르면 회원가입 페이지로 넘어가는 구조
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
         alertBuilder.setMessage("상담사 가입을 희망하시는 경우 상담사 가입에 체크해주시길 바랍니다. 심사 후 상담사 등록을 도와드립니다.");
         alertBuilder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
@@ -61,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
         });
         AlertDialog dialog = alertBuilder.create();
         dialog.show();
-
-
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){

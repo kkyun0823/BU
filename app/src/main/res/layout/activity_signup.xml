@@ -36,6 +36,7 @@
             android:layout_height="43dp"
             android:layout_gravity="right"
 
+            android:fontFamily="@font/blacknorm"
             android:text="상담사 가입" />
 
         <LinearLayout
@@ -54,10 +55,12 @@
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="17dp"
+                android:layout_height="32dp"
                 android:layout_weight="1"
-                android:text="중복확인" />
+                android:fontFamily="@font/blacknorm"
+                android:text="중복확인"
+                android:textSize="10sp" />
 
         </LinearLayout>
 
@@ -110,14 +113,20 @@
                 android:id="@+id/btn_agree"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:background="@drawable/btn_back"
+                android:fontFamily="@font/blacknorm"
                 android:text="회원가입" />
 
             <Button
                 android:id="@+id/btn_cancel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:background="@drawable/btn_back"
+                android:fontFamily="@font/blacknorm"
                 android:text="취소" />
         </LinearLayout>
 

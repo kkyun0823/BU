@@ -51,27 +51,30 @@
             android:gravity="right"
             android:orientation="horizontal">
 
-            <ImageButton
+            <Button
                 android:id="@+id/login_btn"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
+                android:layout_margin="5dp"
+                android:background="@drawable/btn_back"
+                android:fontFamily="@font/blacknorm"
                 android:onClick="onClickedLogin"
-                android:paddingRight="20dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/login_btn" />
+                android:text="로그인"
+                android:textColor="#FFFFFF" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/imageButton2"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
+                android:layout_margin="5dp"
+                android:background="@drawable/btn_back"
+                android:fontFamily="@font/blacknorm"
                 android:onClick="clickedSignup"
-                android:paddingRight="20dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/signup_btn" />
+                android:text="회원가입"
+                android:textColor="#FFFFFF" />
+
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -84,10 +84,8 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         for(User users : userList){
-            System.out.println(users.getId());
             if(users.getId().equals(id.getText().toString()) && users.getPassword().equals(password.getText().toString())){
                 user = users;
-                System.out.println("fff");
                 break;
             }
         }

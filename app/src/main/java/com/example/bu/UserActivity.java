@@ -22,10 +22,9 @@ import java.util.List;
 public class UserActivity extends AppCompatActivity {
     private ArrayList<User> userList = new ArrayList<User>();
     private MyAdapter adapter;
-    private boolean flag;
     private DatabaseReference mRef;
     private FirebaseDatabase mDatabase;
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +44,8 @@ public class UserActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-
     }
+
     private void readData(final FirebaseCallback firebaseCallback){
 
         ValueEventListener listener = new ValueEventListener() {

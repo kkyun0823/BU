@@ -35,7 +35,8 @@
             android:layout_width="114dp"
             android:layout_height="43dp"
             android:layout_gravity="right"
-
+            android:onClick="onCheckBoxClicked"
+            android:checked="false"
             android:fontFamily="@font/blacknorm"
             android:text="상담사 가입" />
 
@@ -105,6 +106,15 @@
             android:ems="10"
             android:hint="연락처"
             android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/major"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="전문 분야"
+            android:inputType="textPersonName"
+            android:visibility="gone" />
 
         <LinearLayout
             android:layout_width="match_parent"

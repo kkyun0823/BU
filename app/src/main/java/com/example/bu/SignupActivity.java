@@ -3,6 +3,7 @@ package com.example.bu;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -28,6 +29,7 @@ public class SignupActivity extends AppCompatActivity {
         id = (EditText)findViewById(R.id.idText);
 
 
+
         Button btn_agree = (Button)findViewById(R.id.btn_agree);
         btn_agree.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,8 +45,11 @@ public class SignupActivity extends AppCompatActivity {
                 user.setName(text_na.getText().toString());
                 EditText text_bd = (EditText)findViewById(R.id.birth);
                 user.setBirth(text_bd.getText().toString());
-                state = onCheckBoxClicked(findViewById(R.id.checkBox));
                 user.setState(state);
+                EditText text_major = (EditText)findViewById(R.id.major);
+                if(!text_major.getText().toString().equals("")){
+                    user.setMajor(text_major.getText().toString());
+                }
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 if(state == 0) {
                     DatabaseReference myRef = database.getReference("/user/" + text_id.getText().toString());
@@ -71,14 +76,20 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
-    public int onCheckBoxClicked(View view){
+    public void onCheckBoxClicked(View view){
         boolean checked = ((CheckBox)view).isChecked();
-        if(checked) return 1;
-        else return 0;
+        EditText major = (EditText)findViewById(R.id.major);
+
+        if(checked){
+            state = 1;
+            major.setVisibility(View.VISIBLE);
+        }
+        else {
+            state = 0;
+            major.setVisibility(View.GONE);
+        }
+
     }
-
-
-
 
 
 

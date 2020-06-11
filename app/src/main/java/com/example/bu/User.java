@@ -7,6 +7,7 @@ public class User {
     private String name;
     private String birth;
     private int state;
+    private String major;
 
     public User(){}
     public User(String id, String password, String phoneNum, String name, String birth){
@@ -19,6 +20,10 @@ public class User {
     public User(String id, String password, String phoneNum, String name, String birth, int state){
         this(id,password,phoneNum,name,birth);
         this.state=state;
+    }
+    public User(String id, String password, String phoneNum, String name, String birth, int state, String major){
+        this(id,password,phoneNum,name,birth,state);
+        this.major = major;
     }
 
     public String getId() {
@@ -43,6 +48,8 @@ public class User {
 
     public int getState(){return state;}
 
+    public String getMajor(){return major;}
+
     public void setState(int state){this.state =  state;}
 
     public void setBirth(String birth) {
@@ -64,4 +71,6 @@ public class User {
     public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
     }
+
+    public void setMajor(String major){this.major = major;}
 }

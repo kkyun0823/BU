@@ -65,9 +65,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder viewholder, int position) {
 
-        viewholder.name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
-        viewholder.major.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
-        viewholder.phoneNum.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+        viewholder.name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+        viewholder.major.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+        viewholder.phoneNum.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
 
         viewholder.name.setGravity(Gravity.CENTER);
         viewholder.major.setGravity(Gravity.CENTER);

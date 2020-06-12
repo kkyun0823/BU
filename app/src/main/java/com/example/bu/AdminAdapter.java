@@ -109,9 +109,9 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.AdminViewHol
     @Override
     public void onBindViewHolder(@NonNull AdminViewHolder viewholder, int position) {
 
-        viewholder.name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
-        viewholder.major.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
-        viewholder.phoneNum.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+        viewholder.name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+        viewholder.major.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+        viewholder.phoneNum.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
 
         viewholder.name.setGravity(Gravity.CENTER);
         viewholder.major.setGravity(Gravity.CENTER);

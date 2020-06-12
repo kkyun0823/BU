@@ -21,18 +21,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserActivity extends AppCompatActivity implements OnItemClick {
+    static final int GET_STRING =1;
     private ArrayList<User> userList = new ArrayList<User>();
     private MyAdapter adapter = new MyAdapter(userList, this);
     private DatabaseReference mRef;
     private FirebaseDatabase mDatabase;
     private RecyclerView recyclerView;
-
+    private User user;
+    private String dst_id;
     @Override
-    public void onCLick() {
+    public void onCLick(String id) {
         Intent intent = new Intent(getApplicationContext(), WriteActivity.class);
-        startActivity(intent);
+        dst_id = id;
+        intent.putExtra("user", user);
+        intent.putExtra("dst", dst_id);
+        startActivityForResult(intent,1);
     }
 
+    public void onActivityResult(int requsetCode, int resultCode, Intent data){
+        if(requsetCode== GET_STRING){
+            if(resultCode== RESULT_OK){
+
+            }
+        }
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +63,7 @@ public class UserActivity extends AppCompatActivity implements OnItemClick {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         Intent intent =getIntent();
-        User user = (User)intent.getSerializableExtra("user");
+        user = (User)intent.getSerializableExtra("user");
         Log.d("uname",user.getName());
 
 

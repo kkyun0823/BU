@@ -1,5 +1,5 @@
 package com.example.bu;
 
 public interface OnItemClick {
-    void onCLick ();
+    void onCLick (String id);
 }

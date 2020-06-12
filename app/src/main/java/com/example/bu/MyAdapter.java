@@ -37,7 +37,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
                     int pos = getAdapterPosition();
                     if(pos != RecyclerView.NO_POSITION){
                         Log.d("adapterItemClick",mList.get(pos).getName());
-                        mCallback.onCLick();
+                        mCallback.onCLick(mList.get(pos).getId());
                     }
                 }
             });

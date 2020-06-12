@@ -38,7 +38,6 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onCallback(ArrayList<User> list) {
                 adapter = new AdminAdapter(list,AdminActivity.this);
-                adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
 
             }
@@ -64,6 +63,8 @@ public class AdminActivity extends AppCompatActivity {
                 counselorCnt.setText(""+counselorNum);
             }
         });
+
+
 
     }
     private void readData(final FirebaseCallback firebaseCallback){

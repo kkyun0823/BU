@@ -58,7 +58,9 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.AdminViewHol
                                 mRef.setValue(user);
                                 mRef = mDatabase.getReference("wait/"+user.getId());
                                 mRef.removeValue();
+
                                 Toast.makeText(activity.getApplicationContext(), "승인되었습니다.", Toast.LENGTH_SHORT).show();
+                                activity.recreate();
                             }
                         });
                         builder.setNegativeButton("거절", new DialogInterface.OnClickListener() {
@@ -68,12 +70,14 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.AdminViewHol
                                 DatabaseReference mRef = mDatabase.getReference("wait/"+user.getId());
                                 mRef.removeValue();
                                 Toast.makeText(activity.getApplicationContext(), "거절되었습니다.", Toast.LENGTH_SHORT).show();
+                                activity.recreate();
                             }
                         });
                         AlertDialog alertDialog = builder.create();
                         alertDialog.show();
 
                     }
+
                 }
             });
 

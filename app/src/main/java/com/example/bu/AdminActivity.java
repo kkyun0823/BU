@@ -37,7 +37,8 @@ public class AdminActivity extends AppCompatActivity {
         readData(new FirebaseCallback() {
             @Override
             public void onCallback(ArrayList<User> list) {
-                adapter = new AdminAdapter(list);
+                adapter = new AdminAdapter(list,AdminActivity.this);
+                adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
 
             }

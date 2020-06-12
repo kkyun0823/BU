@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">BU</string>
     <string name="category_prompt">카테고리를 선택하세요</string>
+    <string name="major_prompt">전문분야를 선택하세요</string>
 </resources>

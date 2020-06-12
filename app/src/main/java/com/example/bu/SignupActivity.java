@@ -5,9 +5,13 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -20,6 +24,7 @@ public class SignupActivity extends AppCompatActivity {
     private EditText id;
     private User user;
     private int state;
+    private String major;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,7 +34,18 @@ public class SignupActivity extends AppCompatActivity {
         id = (EditText)findViewById(R.id.idText);
 
 
+        Spinner spinner = (Spinner)findViewById(R.id.majorspinner);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                major = (String)parent.getItemAtPosition(position);
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         Button btn_agree = (Button)findViewById(R.id.btn_agree);
         btn_agree.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,10 +62,7 @@ public class SignupActivity extends AppCompatActivity {
                 EditText text_bd = (EditText)findViewById(R.id.birth);
                 user.setBirth(text_bd.getText().toString());
                 user.setState(state);
-                EditText text_major = (EditText)findViewById(R.id.major);
-                if(!text_major.getText().toString().equals("")){
-                    user.setMajor(text_major.getText().toString());
-                }
+                user.setMajor(major);
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 if(state == 0) {
                     DatabaseReference myRef = database.getReference("/user/" + text_id.getText().toString());
@@ -74,19 +87,23 @@ public class SignupActivity extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 
     public void onCheckBoxClicked(View view){
         boolean checked = ((CheckBox)view).isChecked();
-        EditText major = (EditText)findViewById(R.id.major);
+        Spinner sp = (Spinner) findViewById(R.id.majorspinner);
+        TextView tx = (TextView)findViewById(R.id.major_text);
 
         if(checked){
             state = 1;
-            major.setVisibility(View.VISIBLE);
+            sp.setVisibility(View.VISIBLE);
+            tx.setVisibility(View.VISIBLE);
         }
         else {
             state = 0;
-            major.setVisibility(View.GONE);
+            sp.setVisibility(View.GONE);
+            tx.setVisibility(View.GONE);
         }
 
     }

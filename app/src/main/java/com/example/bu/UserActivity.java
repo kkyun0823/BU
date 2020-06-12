@@ -20,12 +20,19 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity implements OnItemClick {
     private ArrayList<User> userList = new ArrayList<User>();
-    private MyAdapter adapter;
+    private MyAdapter adapter = new MyAdapter(userList, this);
     private DatabaseReference mRef;
     private FirebaseDatabase mDatabase;
     private RecyclerView recyclerView;
+
+    @Override
+    public void onCLick() {
+        Intent intent = new Intent(getApplicationContext(), WriteActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +43,6 @@ public class UserActivity extends AppCompatActivity {
         readData(new FirebaseCallback() {
             @Override
             public void onCallback(ArrayList<User> list) {
-                adapter = new MyAdapter(userList);
                 System.out.println(userList);
                 recyclerView.setAdapter(adapter);            }
         });
@@ -47,6 +53,11 @@ public class UserActivity extends AppCompatActivity {
         Intent intent =getIntent();
         User user = (User)intent.getSerializableExtra("user");
         Log.d("uname",user.getName());
+
+
+    }
+    public void goNext(){
+
     }
 
     private void readData(final FirebaseCallback firebaseCallback){

@@ -41,14 +41,14 @@ public class WriteActivity extends AppCompatActivity {
                 contents.setTitle(text_title.getText().toString());
                 EditText text_main = (EditText)findViewById(R.id.main_edittext);
                 contents.setMaintext(text_main.getText().toString());
+                contents.setCategory(cate);
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 if(text_title!=null&&text_main!=null){
                     DatabaseReference myref = database.getReference("/contents/");
-
-                }else{
-
+                    myref.setValue(contents);
                 }
+
             }
         });
 

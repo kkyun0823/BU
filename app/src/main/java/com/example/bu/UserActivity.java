@@ -3,7 +3,9 @@ package com.example.bu;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.SimpleAdapter;
 
 import androidx.annotation.NonNull;
@@ -65,10 +67,17 @@ public class UserActivity extends AppCompatActivity implements OnItemClick {
         Intent intent =getIntent();
         user = (User)intent.getSerializableExtra("user");
         Log.d("uname",user.getName());
+        Button my_pagebtn = (Button) findViewById(R.id.mypage_btn);
+        my_pagebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(getApplicationContext(),UserMyPage.class);
+                intent2.putExtra("userinfo", user);
+                startActivity(intent2);
+            }
+        });
 
 
-    }
-    public void goNext(){
 
     }
 

@@ -57,7 +57,9 @@ public class WriteActivity extends AppCompatActivity {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 if(text_title!=null&&text_main!=null){
                     DatabaseReference myref = database.getReference("/contents/"+dst_id.toString()+"/"+text_title.getText().toString());
+                    DatabaseReference myref2 = database.getReference("/contents/"+user.getId()+"/"+text_title.getText().toString());
                     myref.setValue(contents);
+                    myref2.setValue(contents);
                 }
                 Toast.makeText(getApplicationContext(),"작성되었습니다.", Toast.LENGTH_LONG).show();
                 setResult(RESULT_OK);

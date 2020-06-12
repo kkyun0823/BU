@@ -1,5 +1,6 @@
 package com.example.bu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
@@ -43,7 +44,9 @@ public class UserActivity extends AppCompatActivity {
         recyclerView = (RecyclerView)findViewById(R.id.counselor_list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-
+        Intent intent =getIntent();
+        User user = (User)intent.getSerializableExtra("user");
+        Log.d("uname",user.getName());
     }
 
     private void readData(final FirebaseCallback firebaseCallback){

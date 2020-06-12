@@ -33,7 +33,8 @@
             android:label="AdminActivity" />
         <activity android:name=".CounselorActivity"
             android:label="CounselorActivity"/>
-
+        <activity android:name=".UserMyPage"
+            android:label="UserMyPage"/>
     </application>
 
 </manifest>

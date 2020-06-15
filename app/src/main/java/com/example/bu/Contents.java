@@ -1,6 +1,9 @@
 package com.example.bu;
 
-public class Contents {
+import java.io.Serializable;
+
+public class Contents implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String request_id;
     private String dst_id;
     private String title;
@@ -10,13 +13,16 @@ public class Contents {
 
 
     public Contents(){}
-    public Contents(String reauest_id, String dst_id, String title, String category, String maintext){
-        this.request_id = reauest_id;
+    public Contents(String request_id, String dst_id, String title, String category, String maintext){
+        this.request_id = request_id;
         this.dst_id = dst_id;
         this.title = title;
         this.category = category;
         this.maintext = maintext;
-
+    }
+    public Contents(String request_id, String dst_id, String title, String category, String maintext, String reply){
+        this(request_id,dst_id,title,category,maintext);
+        this.reply = reply;
     }
 
     public String getRequest_id(){
@@ -36,7 +42,9 @@ public class Contents {
     public String getMaintext(){
         return maintext;
     }
-
+    public String getReply(){
+        return reply;
+    }
     public void setReply(String reply){
         this.reply = reply;
     }

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,28 +24,31 @@ public class CounselorActivity extends AppCompatActivity {
     private DatabaseReference mRef;
     private FirebaseDatabase mDatabase;
     private RecyclerView recyclerView;
+    private User counselor;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_counselor);
         Intent intent = getIntent();
-        User counselor = (User)intent.getSerializableExtra("counselor");
-        Log.d("CID",counselor.getName());
+        counselor = (User)intent.getSerializableExtra("counselor");
+
 
         mDatabase = FirebaseDatabase.getInstance();
         mRef = mDatabase.getReference("contents/"+counselor.getId());
         readData(new FirebaseCallback() {
             @Override
             public void onCallback(ArrayList<Contents> list) {
-                adapter = new CounselorAdapter(list);
+                adapter = new CounselorAdapter(list,CounselorActivity.this);
                 recyclerView.setAdapter(adapter);
-
             }
         });
         recyclerView = (RecyclerView)findViewById(R.id.counsel_list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
+
 
     }
 
@@ -70,4 +74,17 @@ public class CounselorActivity extends AppCompatActivity {
     private interface FirebaseCallback{
         void onCallback(ArrayList<Contents> list);
     }
+
+    public void selectContent(String request_id, String title){
+        Log.v("test",request_id+"//////////"+title+"/////"+counselor.getName());
+        Contents contents = null;
+        for(Contents content : contentsList){
+            if(content.getRequest_id().equals(request_id) && content.getTitle().equals(title)) contents = content;
+        }
+        Intent intent = new Intent(getApplicationContext(), ReplyActivity.class);
+        intent.putExtra("content",contents);
+        intent.putExtra("counselor",counselor);
+        startActivityForResult(intent,1);
+    }
+
 }

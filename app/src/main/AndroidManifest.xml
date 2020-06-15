@@ -31,10 +31,15 @@
         <activity
             android:name=".AdminActivity"
             android:label="AdminActivity" />
-        <activity android:name=".CounselorActivity"
-            android:label="CounselorActivity"/>
-        <activity android:name=".UserMyPage"
-            android:label="UserMyPage"/>
+        <activity
+            android:name=".CounselorActivity"
+            android:label="CounselorActivity" />
+        <activity
+            android:name=".UserMyPage"
+            android:label="UserMyPage" />
+        <activity
+            android:name=".ReplyActivity"
+            android:label = "ReplyActivity"/>
     </application>
 
 </manifest>

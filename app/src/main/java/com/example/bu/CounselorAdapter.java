@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 public class CounselorAdapter extends RecyclerView.Adapter<CounselorAdapter.CounselorViewHolder> {
     private static ArrayList<Contents> mList;
+    private static CounselorActivity activity;
     public static class CounselorViewHolder extends RecyclerView.ViewHolder {
         protected TextView title;
         protected TextView request_id;
@@ -36,6 +37,7 @@ public class CounselorAdapter extends RecyclerView.Adapter<CounselorAdapter.Coun
                     int pos = getAdapterPosition();
                     if(pos != RecyclerView.NO_POSITION){
 //                        Log.d("adapterItemClick",mList.get(pos).getName());
+                        activity.selectContent(mList.get(pos).getRequest_id(), mList.get(pos).getTitle());
 
                     }
                 }
@@ -45,8 +47,9 @@ public class CounselorAdapter extends RecyclerView.Adapter<CounselorAdapter.Coun
     }
 
 
-    public CounselorAdapter(ArrayList<Contents> list) {
+    public CounselorAdapter(ArrayList<Contents> list, CounselorActivity counselorActivity) {
         this.mList = list;
+        this.activity = counselorActivity;
 
     }
 

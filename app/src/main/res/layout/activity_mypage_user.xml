@@ -101,6 +101,7 @@
             android:textSize="18sp" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id ="@+id/user_request_list"
             android:layout_width="match_parent"
             android:layout_height="399dp">
 

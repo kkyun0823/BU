@@ -24,14 +24,29 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class UserMyPage extends AppCompatActivity {
+public class UserMyPage extends AppCompatActivity implements OnitemClick2{
     private User user;
     private RecyclerView recyclerView;
     private Contents contents;
     private ArrayList<Contents> contentslist = new ArrayList<Contents>();
-    private UserRequestAdapter adapter = new UserRequestAdapter(contentslist);
+    private UserRequestAdapter adapter = new UserRequestAdapter(contentslist, this);
     private DatabaseReference mRef;
     private FirebaseDatabase mDatabase;
+    private String d_title;
+
+    @Override
+    public void onClick2(String title) {
+        Intent intent = new Intent(getApplicationContext(), ShowDetail.class);
+        d_title = title;
+        intent.putExtra("user", user);
+        intent.putExtra("title", title);
+        Contents content = null;
+        for(Contents a : contentslist){
+            if(a.getTitle().equals(title)) content = a;
+        }
+        intent.putExtra("content",content);
+        startActivityForResult(intent,1);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

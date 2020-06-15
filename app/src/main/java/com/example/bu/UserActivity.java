@@ -31,12 +31,15 @@ public class UserActivity extends AppCompatActivity implements OnItemClick {
     private RecyclerView recyclerView;
     private User user;
     private String dst_id;
+    private String dst_name;
     @Override
-    public void onCLick(String id) {
+    public void onCLick(String id, String name) {
         Intent intent = new Intent(getApplicationContext(), WriteActivity.class);
         dst_id = id;
+        dst_name = name;
         intent.putExtra("user", user);
         intent.putExtra("dst", dst_id);
+        intent.putExtra("dstname", dst_name);
         startActivityForResult(intent,1);
     }
 

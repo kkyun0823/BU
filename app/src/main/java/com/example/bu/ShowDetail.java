@@ -1,11 +1,16 @@
 package com.example.bu;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
@@ -46,6 +51,41 @@ public class ShowDetail extends AppCompatActivity {
         }else{
             reply.setText(content.getReply());
         }
+        Button btn_ok = findViewById(R.id.btn_detail_ok);
+        btn_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ShowDetail.this, "이전화면으로 돌아갑니다.", Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
+        Button btn_del = findViewById(R.id.btn_detail_del);
+        btn_del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(ShowDetail.this);
+                builder.setMessage("삭제하신 글은 복구가 불가능합니다. 글을 삭제하시겠습니까?");
+                builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        mRef = mDatabase.getReference("contents/"+user.getId()+"/"+content.getTitle());
+                        mRef.removeValue();
+                        mRef = mDatabase.getReference("contents/"+content.getDst_id()+"/"+content.getTitle());
+                        mRef.removeValue();
+                        Toast.makeText(ShowDetail.this, "삭제되었습니다.",Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("아니오", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(ShowDetail.this, "취소되없습니다.",Toast.LENGTH_LONG).show();
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
 
     }
 }

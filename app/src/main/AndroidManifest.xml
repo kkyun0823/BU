@@ -40,6 +40,8 @@
         <activity
             android:name=".ReplyActivity"
             android:label = "ReplyActivity"/>
+        <activity android:name=".ShowDetail"
+            android:label="ShowDetail"/>
     </application>
 
 </manifest>

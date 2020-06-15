@@ -10,23 +10,33 @@ public class Contents implements Serializable {
     private String category;
     private String maintext;
     private String reply;
+    private String dst_name;
 
 
     public Contents(){}
-    public Contents(String request_id, String dst_id, String title, String category, String maintext){
+    public Contents(String request_id, String dst_id, String title, String category, String maintext, String dst_name){
         this.request_id = request_id;
         this.dst_id = dst_id;
         this.title = title;
         this.category = category;
         this.maintext = maintext;
+        this.dst_name = dst_name;
     }
-    public Contents(String request_id, String dst_id, String title, String category, String maintext, String reply){
-        this(request_id,dst_id,title,category,maintext);
+    public Contents(String request_id, String dst_id, String title, String category, String maintext, String reply, String dst_name){
+        this(request_id,dst_id,title,category,maintext,dst_name);
         this.reply = reply;
     }
 
     public String getRequest_id(){
         return request_id;
+    }
+
+    public void setDst_name(String dst_name) {
+        this.dst_name = dst_name;
+    }
+
+    public String getDst_name() {
+        return dst_name;
     }
 
     public String getDst_id() {

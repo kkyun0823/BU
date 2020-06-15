@@ -20,6 +20,7 @@ public class WriteActivity extends AppCompatActivity {
     private Contents contents;
     private User user;
     private String dst_id;
+    private String dst_name;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         contents = new Contents();
@@ -28,6 +29,8 @@ public class WriteActivity extends AppCompatActivity {
         Intent intent = getIntent();
         user =(User)intent.getSerializableExtra("user");
         dst_id = (String)intent.getSerializableExtra("dst");
+        dst_name = (String)intent.getSerializableExtra("dstname");
+
         Log.d("uname",user.getName());
         Log.d("dstid", dst_id);
         Spinner spinner = (Spinner)findViewById(R.id.spinner);
@@ -53,6 +56,7 @@ public class WriteActivity extends AppCompatActivity {
                 contents.setCategory(cate);
                 contents.setRequest_id(user.getId());
                 contents.setDst_id(dst_id);
+                contents.setDst_name(dst_name);
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 if(text_title!=null&&text_main!=null){

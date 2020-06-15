@@ -15,10 +15,12 @@ import java.util.ArrayList;
 
 public class UserRequestAdapter extends RecyclerView.Adapter<UserRequestAdapter.URViewHolder> {
     private static ArrayList<Contents> mList;
+    private static OnitemClick2 mCallback;
 
     public static class URViewHolder extends RecyclerView.ViewHolder{
         protected TextView title;
         protected TextView counselor_name;
+
         public URViewHolder(View view){
             super(view);
             this.title = (TextView)view.findViewById(R.id.text_title);
@@ -29,15 +31,17 @@ public class UserRequestAdapter extends RecyclerView.Adapter<UserRequestAdapter.
                 public void onClick(View v) {
                     int pos = getAdapterPosition();
                     if(pos!=RecyclerView.NO_POSITION){
-
+                        mCallback.onClick2(mList.get(pos).getTitle());
                     }
                 }
             });
         }
 
     }
-    public UserRequestAdapter(ArrayList<Contents> list){
+    public UserRequestAdapter(ArrayList<Contents> list, OnitemClick2 listener){
         this.mList = list;
+        this.mCallback = listener;
+
     }
 
     public URViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType){
@@ -50,7 +54,7 @@ public class UserRequestAdapter extends RecyclerView.Adapter<UserRequestAdapter.
         viewHolder.counselor_name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
 
         viewHolder.title.setText(mList.get(position).getTitle());
-        viewHolder.counselor_name.setText(mList.get(position).getDst_id());
+        viewHolder.counselor_name.setText(mList.get(position).getDst_name());
 
     }
     public int getItemCount(){

@@ -7,33 +7,56 @@
     android:background="#FFFFFF"
     tools:context=".CounselorActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/counsel_list"
-        android:layout_width="match_parent"
-        android:layout_height="566dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
     <TextView
         android:id="@+id/counselor_text9"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="80dp"
         android:background="#6495F7"
         android:fontFamily="@font/blacknorm"
         android:gravity="center"
         android:text="상담요청"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="13sp"
-        app:layout_constraintBottom_toTopOf="@+id/counsel_list"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/counsel_list"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/counselor_text9" />
+
+    <TextView
+        android:id="@+id/counselor_text"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="36dp"
+        android:background="#6495F7"
+        android:fontFamily="@font/blacknorm"
+        android:gravity="center"
+        android:text="상담완료리스트"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/counsel_list" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/complete_list"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/counselor_text"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

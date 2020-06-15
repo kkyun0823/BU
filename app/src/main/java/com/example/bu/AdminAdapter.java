@@ -48,7 +48,7 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.AdminViewHol
                     if(pos != RecyclerView.NO_POSITION){
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-                        builder.setTitle("상담가 승인 요청").setMessage(user.getName() + "\n 승인 / 거절");
+                        builder.setTitle("상담가 승인 요청").setMessage("거절 / 승인");
                         builder.setPositiveButton("승인", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

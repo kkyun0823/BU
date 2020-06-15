@@ -39,7 +39,10 @@
             android:label="UserMyPage" />
         <activity
             android:name=".ReplyActivity"
-            android:label = "ReplyActivity"/>
+            android:label="ReplyActivity" />
+        <activity
+            android:name=".CompleteActivity"
+            android:label="CompleteActivity"/>
     </application>
 
 </manifest>

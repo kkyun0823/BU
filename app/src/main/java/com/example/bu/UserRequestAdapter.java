@@ -54,8 +54,8 @@ public class UserRequestAdapter extends RecyclerView.Adapter<UserRequestAdapter.
         viewholder.title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
         viewholder.counselor_name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
 
-        viewholder.title.setGravity(Gravity.CENTER);
-        viewholder.counselor_name.setGravity(Gravity.CENTER);
+//        viewholder.title.setGravity(Gravity.CENTER);
+//        viewholder.counselor_name.setGravity(Gravity.CENTER);
 
         viewholder.title.setText(mList.get(position).getTitle());
         viewholder.counselor_name.setText(mList.get(position).getDst_name());

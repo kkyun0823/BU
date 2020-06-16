@@ -71,8 +71,8 @@ public class CounselorAdapter2 extends RecyclerView.Adapter<CounselorAdapter2.Co
         viewholder.title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
         viewholder.request_id.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
 
-        viewholder.title.setGravity(Gravity.CENTER);
-        viewholder.request_id.setGravity(Gravity.CENTER);
+//        viewholder.title.setGravity(Gravity.CENTER);
+//        viewholder.request_id.setGravity(Gravity.CENTER);
 
 
         viewholder.title.setText(mList.get(position).getTitle());

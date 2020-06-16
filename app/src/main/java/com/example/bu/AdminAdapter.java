@@ -113,9 +113,9 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.AdminViewHol
         viewholder.major.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
         viewholder.phoneNum.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
 
-        viewholder.name.setGravity(Gravity.CENTER);
-        viewholder.major.setGravity(Gravity.CENTER);
-        viewholder.phoneNum.setGravity(Gravity.CENTER);
+//        viewholder.name.setGravity(Gravity.CENTER);
+//        viewholder.major.setGravity(Gravity.CENTER);
+//        viewholder.phoneNum.setGravity(Gravity.CENTER);
 
 
 

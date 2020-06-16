@@ -21,12 +21,18 @@
             android:text="제목" />
 
         <TextView
+            android:id="@+id/textView30"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="#FFFFFF" />
+
+        <TextView
             android:id="@+id/text_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/blacknorm"
-            android:gravity="center"
             android:text="TextView" />
     </LinearLayout>
 
@@ -46,12 +52,18 @@
             android:text="상담사" />
 
         <TextView
+            android:id="@+id/textView31"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="#FFFFFF" />
+
+        <TextView
             android:id="@+id/text_counselor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/blacknorm"
-            android:gravity="center"
             android:text="TextView" />
     </LinearLayout>
 

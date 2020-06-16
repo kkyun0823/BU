@@ -74,9 +74,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
         viewholder.major.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
         viewholder.phoneNum.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
 
-        viewholder.name.setGravity(Gravity.CENTER);
-        viewholder.major.setGravity(Gravity.CENTER);
-        viewholder.phoneNum.setGravity(Gravity.CENTER);
+//        viewholder.name.setGravity(Gravity.CENTER);
+//        viewholder.major.setGravity(Gravity.CENTER);
+//        viewholder.phoneNum.setGravity(Gravity.CENTER);
 
         viewholder.name.setText(mList.get(position).getName());
         viewholder.major.setText(mList.get(position).getMajor());

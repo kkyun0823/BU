@@ -65,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(requestCode == GET_STRING){
-            if(resultCode == RESULT_OK){
 
-            }
+        if(resultCode == RESULT_OK){
+            recreate();
         }
+
     }
 
     public void onClickedLogin(View view){

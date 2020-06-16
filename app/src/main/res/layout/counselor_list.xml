@@ -22,12 +22,18 @@
             android:text="상담사 이름" />
 
         <TextView
+            android:id="@+id/textView26"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="#FFFFFF" />
+
+        <TextView
             android:id="@+id/counselor_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/blacknorm"
-            android:gravity="center"
             android:text="TextView" />
     </LinearLayout>
 
@@ -47,12 +53,18 @@
             android:text="전문 분야" />
 
         <TextView
+            android:id="@+id/textView28"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="#FFFFFF" />
+
+        <TextView
             android:id="@+id/counselor_major"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/blacknorm"
-            android:gravity="center"
             android:text="TextView" />
     </LinearLayout>
 
@@ -73,12 +85,18 @@
             android:text="전화번호" />
 
         <TextView
+            android:id="@+id/textView29"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="#FFFFFF" />
+
+        <TextView
             android:id="@+id/counselor_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/blacknorm"
-            android:gravity="center"
             android:text="TextView" />
     </LinearLayout>
 

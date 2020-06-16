@@ -1,6 +1,7 @@
 package com.example.bu;
 
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,12 +50,15 @@ public class UserRequestAdapter extends RecyclerView.Adapter<UserRequestAdapter.
         URViewHolder viewHolder = new URViewHolder(view);
         return viewHolder;
     }
-    public void onBindViewHolder(@NonNull URViewHolder viewHolder, int position){
-        viewHolder.title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
-        viewHolder.counselor_name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+    public void onBindViewHolder(@NonNull URViewHolder viewholder, int position){
+        viewholder.title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+        viewholder.counselor_name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
 
-        viewHolder.title.setText(mList.get(position).getTitle());
-        viewHolder.counselor_name.setText(mList.get(position).getDst_name());
+        viewholder.title.setGravity(Gravity.CENTER);
+        viewholder.counselor_name.setGravity(Gravity.CENTER);
+
+        viewholder.title.setText(mList.get(position).getTitle());
+        viewholder.counselor_name.setText(mList.get(position).getDst_name());
 
     }
     public int getItemCount(){

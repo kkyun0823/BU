@@ -55,7 +55,7 @@
                 android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/duplicate_check_btn"
                 android:layout_width="17dp"
                 android:layout_height="32dp"
                 android:layout_weight="1"

@@ -38,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:ems="10"
+                android:fontFamily="@font/blacknorm"
                 android:text="TextView" />
 
         </LinearLayout>
@@ -64,6 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:ems="10"
+                android:fontFamily="@font/blacknorm"
                 android:text="TextView" />
 
         </LinearLayout>
@@ -84,6 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="143dp"
             android:background="#336495F7"
+            android:fontFamily="@font/blacknorm"
             android:text="TextView" />
 
         <TextView
@@ -103,6 +106,7 @@
             android:layout_height="195dp"
             android:background="#336495F7"
             android:ems="10"
+            android:fontFamily="@font/blacknorm"
             android:gravity="start|top"
             android:hint="답변을 입력하세요."
             android:inputType="textMultiLine" />

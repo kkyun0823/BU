@@ -138,5 +138,12 @@ public class CounselorActivity extends AppCompatActivity {
         intent.putExtra("counselor",counselor);
         startActivityForResult(intent,1);
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            recreate();
+        }
+    }
+
 
 }

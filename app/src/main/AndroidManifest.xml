@@ -20,31 +20,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignupActivity"
-            android:label="SignupActivity" />
+            android:name=".SignupActivity" />
         <activity
-            android:name=".WriteActivity"
-            android:label="WriteActivity" />
+            android:name=".WriteActivity"/>
         <activity
-            android:name=".UserActivity"
-            android:label="UserActivity" />
+            android:name=".UserActivity"/>
         <activity
-            android:name=".AdminActivity"
-            android:label="AdminActivity" />
+            android:name=".AdminActivity" />
         <activity
-            android:name=".CounselorActivity"
-            android:label="CounselorActivity" />
+            android:name=".CounselorActivity" />
         <activity
-            android:name=".UserMyPage"
-            android:label="UserMyPage" />
+            android:name=".UserMyPage" />
         <activity
-            android:name=".ReplyActivity"
-            android:label = "ReplyActivity"/>
-        <activity android:name=".ShowDetail"
-            android:label="ShowDetail"/>
+            android:name=".ReplyActivity"/>
+        <activity android:name=".ShowDetail"/>
         <activity
-            android:name=".CompleteActivity"
-            android:label="CompleteActivity"/>
+            android:name=".CompleteActivity"/>
     </application>
 
 </manifest>
